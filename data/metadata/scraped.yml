@@ -1,0 +1,901 @@
+brands:
+  Apple:
+  - iPhone 13 Pro Max
+  - iPhone 13 Pro
+  - iPhone 13
+  - iPhone 13 mini
+  - iPad mini (2021)
+  - iPad 10.2 (2021)
+  - Watch Edition Series 7
+  - Watch Series 7
+  - Watch Series 7 Aluminum
+  - iPad Pro 12.9 (2021)
+  - iPad Pro 11 (2021)
+  - iPhone 12 Pro Max
+  - iPhone 12 Pro
+  - iPhone 12
+  - iPhone 12 mini
+  - iPad Air (2020)
+  - iPad 10.2 (2020)
+  - Watch SE
+  - Watch Series 6 Aluminum
+  - Watch Series 6
+  - Watch Edition Series 6
+  - iPhone SE (2020)
+  - iPad Pro 12.9 (2020)
+  - iPad Pro 11 (2020)
+  - iPhone 11 Pro Max
+  - iPhone 11 Pro
+  - iPhone 11
+  - iPad 10.2 (2019)
+  - Watch Edition Series 5
+  - Watch Series 5
+  - Watch Series 5 Aluminum
+  - iPad Air (2019)
+  - iPad mini (2019)
+  - iPad Pro 12.9 (2018)
+  - iPad Pro 11 (2018)
+  - iPhone XS Max
+  - iPhone XS
+  - iPhone XR
+  - Watch Series 4
+  - Watch Series 4 Aluminum
+  - iPad 9.7 (2018)
+  - iPhone X
+  - iPhone 8 Plus
+  - iPhone 8
+  - Watch Edition Series 3
+  - Watch Series 3
+  - Watch Series 3 Aluminum
+  - iPad Pro 12.9 (2017)
+  - iPad Pro 10.5 (2017)
+  - iPad 9.7 (2017)
+  - Watch Edition Series 2 42mm
+  - Watch Edition Series 2 38mm
+  - Watch Series 2 42mm
+  - Watch Series 2 38mm
+  - Watch Series 2 Aluminum 42mm
+  - Watch Series 1 Aluminum 42mm
+  - Watch Series 2 Aluminum 38mm
+  - Watch Series 1 Aluminum 38mm
+  - iPhone 7 Plus
+  - iPhone 7
+  - iPad Pro 9.7 (2016)
+  - iPhone SE
+  - iPhone 6s Plus
+  - iPhone 6s
+  - iPad Pro 12.9 (2015)
+  - iPad mini 4 (2015)
+  - Watch Edition 42mm (1st gen)
+  - Watch Edition 38mm (1st gen)
+  - Watch 42mm (1st gen)
+  - Watch 38mm (1st gen)
+  - Watch Sport 42mm (1st gen)
+  - Watch Sport 38mm (1st gen)
+  - iPad Air 2
+  - iPad mini 3
+  - iPhone 6 Plus
+  - iPhone 6
+  - iPad Air
+  - iPad mini 2
+  - iPhone 5s
+  - iPhone 5c
+  - iPad mini Wi-Fi
+  - iPad mini Wi-Fi + Cellular
+  - iPad 4 Wi-Fi
+  - iPad 4 Wi-Fi + Cellular
+  - iPhone 5
+  - iPad 3 Wi-Fi + Cellular
+  - iPad 3 Wi-Fi
+  - iPhone 4s
+  - iPad 2 Wi-Fi + 3G
+  - iPad 2 Wi-Fi
+  - iPad 2 CDMA
+  - iPhone 4
+  - iPhone 4 CDMA
+  - iPad Wi-Fi + 3G
+  - iPad Wi-Fi
+  - iPhone 3GS
+  - iPhone 3G
+  - iPhone
+  BlackBerry:
+  - KEY2 LE
+  - Evolve X
+  - Evolve
+  - KEY2
+  - Motion
+  - Aurora
+  - Keyone
+  - DTEK60
+  - DTEK50
+  - Priv
+  - Leap
+  - Classic Non Camera
+  - Porsche Design P'9983
+  - Passport
+  - Classic
+  - Z3
+  - Porsche Design P'9982
+  - Z30
+  - '9720'
+  - Q5
+  - Z10
+  - Q10
+  - 4G LTE Playbook
+  - Curve 9320
+  - Curve 9220
+  - Curve 9380
+  - Bold 9790
+  - Porsche Design P'9981
+  - Curve 9370
+  - Curve 9360
+  - Curve 9350
+  - Torch 9810
+  - Torch 9860
+  - Torch 9850
+  - Bold Touch 9900
+  - Bold Touch 9930
+  - 4G Playbook HSPA+
+  - Playbook Wimax
+  - Playbook
+  - Bold 9780
+  - Style 9670
+  - Curve 3G 9330
+  - Curve 3G 9300
+  - Torch 9800
+  - Pearl 3G 9105
+  - Pearl 3G 9100
+  - Bold 9650
+  - Bold 9700
+  - Storm2 9520
+  - Storm2 9550
+  - Curve 8530
+  - Curve 8520
+  - Tour 9630
+  - Curve 8980
+  - Curve 8900
+  - Storm3
+  - Storm 9500
+  - Storm 9530
+  - Pearl Flip 8230
+  - Pearl Flip 8220
+  - Bold 9000
+  - Volt
+  - Pearl 8130
+  - Pearl 8110
+  - Pearl 8120
+  - Curve 8330
+  - Curve 8320
+  - Curve 8310
+  - Curve 8300
+  - '8820'
+  - 8830 World Edition
+  - '8800'
+  - Pearl 8100
+  - 7130g
+  - 7130c
+  - 7130v
+  - 8707v
+  - 8700c
+  - 7100x
+  - 7100t
+  - 7100v
+  - '7290'
+  - '7730'
+  - '7230'
+  - '6720'
+  - '6230'
+  - Z20
+  - A10
+  - Porsche Design P'9531
+  - Playbook 2012
+  - Curve Touch
+  - Curve Touch CDMA
+  Google:
+  - Pixel 6 Pro
+  - Pixel 6
+  - Pixel 5a 5G
+  - Pixel 5
+  - Pixel 4a 5G
+  - Pixel 4a
+  - Pixel 4 XL
+  - Pixel 4
+  - Pixel 3a XL
+  - Pixel 3a
+  - Pixel 3 XL
+  - Pixel 3
+  - Pixel 2
+  - Pixel 2 XL
+  - Pixel XL
+  - Pixel
+  - Pixel C
+  HTC:
+  - Wildfire E2 Plus
+  - Wildfire E3
+  - Desire 21 Pro 5G
+  - Desire 20+
+  - Wildfire E1 lite
+  - Wildfire E2
+  - Wildfire E1 plus
+  - Wildfire E1
+  - Wildfire E
+  - U20 5G
+  - Desire 20 Pro
+  - Wildfire R70
+  - Desire 19s
+  - Exodus 1s
+  - Wildfire X
+  - U19e
+  - Desire 19+
+  - Desire 12s
+  - Exodus 1
+  - U12 life
+  - U12+
+  - Desire 12+
+  - Desire 12
+  - U11 Eyes
+  - U11+
+  - U11 Life
+  - U11
+  - One X10
+  - U Ultra
+  - U Play
+  - 10 evo
+  - Desire 650
+  - Desire 10 Pro
+  - Desire 10 Compact
+  - One A9s
+  - Desire 10 Lifestyle
+  - Desire 728 Ultra
+  - Desire 628
+  - One M9 Prime Camera
+  - Desire 830
+  - One S9
+  - 10 Lifestyle
+  - '10'
+  - Desire 825
+  - Desire 630
+  - Desire 530
+  - Desire 625
+  - One X9
+  - One M9s
+  - Desire 828 dual sim
+  - Desire 728 dual sim
+  - One E9s dual sim
+  - Butterfly 3
+  - One M9+ Supreme Camera
+  - One A9
+  - Desire 626 (USA)
+  - Desire 626s
+  - Desire 526
+  - Desire 520
+  - One ME
+  - Desire 820G+ dual sim
+  - Desire 326G dual sim
+  - One M9+
+  - One M8s
+  - One E9+
+  - One E9
+  - One M9
+  - Desire 820s dual sim
+  - Desire 626G+
+  - Desire 626
+  - 'Desire 526G+ dual sim '
+  - Desire 826 dual sim
+  - Desire 320
+  - Desire 620G dual sim
+  - Desire 620
+  - Nexus 9
+  - Desire 816G dual sim
+  - One (M8 Eye)
+  - Desire Eye
+  - Desire 612
+  - Desire 820q dual sim
+  - Desire 820 dual sim
+  - Desire 820
+  - One (E8) CDMA
+  - Desire 510
+  - One (M8) for Windows
+  - One (M8) for Windows (CDMA)
+  - Butterfly 2
+  - One Remix
+  - One (M8) dual sim
+  - Desire 516 dual sim
+  - One (E8)
+  - One mini 2
+  - Desire 616 dual sim
+  - Desire 210 dual sim
+  - One (M8) CDMA
+  - One (M8)
+  - Desire 310 dual sim
+  - Desire 310
+  - Desire 816 dual sim
+  - Desire 816
+  - Desire 610
+  - Desire 501 dual sim
+  - Desire 700
+  - Desire 700 dual sim
+  - Desire 601 dual sim
+  - Desire 501
+  - One Max
+  - Desire 300
+  - Desire 601
+  - Desire 500
+  - One mini
+  - Desire L
+  - Desire P
+  - Desire Q
+  - 8XT
+  - Butterfly S
+  - Desire 200
+  - Desire 600 dual sim
+  - First
+  - One Dual Sim
+  - One
+  - Desire U
+  - Desire 400 dual sim
+  - Butterfly
+  - DROID DNA
+  - One SV CDMA
+  - One SV
+  - Desire SV
+  - One VX
+  - One X+
+  - Windows Phone 8X CDMA
+  - Windows Phone 8X
+  - Windows Phone 8S
+  - One ST
+  - One SC
+  - Desire X
+  - Desire VT
+  - Desire XC
+  - Desire VC
+  - Desire V
+  - Desire C
+  - J
+  - DROID Incredible 4G LTE
+  - Evo 4G LTE
+  - One XC
+  - One X
+  - One X AT&T
+  - One XL
+  - One S C2
+  - One S
+  - One V
+  - Velocity 4G Vodafone
+  - Velocity 4G
+  - Titan II
+  - Rezound
+  - Vivid
+  - EVO Design 4G
+  - Sensation XL
+  - Explorer
+  - Amaze 4G
+  - Raider 4G
+  - Rhyme
+  - Hero S
+  - Rhyme CDMA
+  - Sensation XE
+  - Jetstream
+  - Lead
+  - Titan
+  - Radar
+  - Panache
+  - Status
+  - Glacier
+  - Trophy
+  - DROID Incredible 2
+  - Sensation 4G
+  - EVO 3D
+  - Sensation
+  - EVO 3D CDMA
+  - HD7S
+  - Prime
+  - Merge
+  - Incredible S
+  - Desire S
+  - Wildfire S
+  - Salsa
+  - ChaCha
+  - Flyer
+  - Flyer Wi-Fi
+  - EVO View 4G
+  - Inspire 4G
+  - Freestyle
+  - ThunderBolt 4G
+  - EVO Shift 4G
+  - Gratia
+  - HD7
+  - 7 Pro
+  - 7 Surround
+  - 7 Mozart
+  - 7 Trophy
+  - Arrive
+  - Desire HD
+  - Desire Z
+  - Paradise
+  - Evo 4G+
+  - Aria
+  - Wildfire CDMA
+  - Wildfire
+  - HD mini
+  - Desire
+  - Legend
+  - Rider
+  - Google Nexus One
+  - Smart
+  - HD2
+  - Evo 4G
+  - Droid Incredible
+  - DROID ERIS
+  - Pure
+  - Tattoo
+  - Touch2
+  - Hero CDMA
+  - Hero
+  - Ozone
+  - Schubert
+  - Snap
+  - Magic
+  - Touch Pro2 CDMA
+  - Tilt2
+  - Touch Pro2
+  - Touch Diamond2 CDMA
+  - Touch Diamond2
+  - Dream
+  - Touch Cruise 09
+  - MAX 4G
+  - Touch HD T8285
+  - Touch HD
+  - Touch 3G
+  - Touch Viva
+  - S740
+  - Touch Pro CDMA
+  - Touch Pro
+  - Touch Diamond CDMA
+  - Touch Diamond
+  - Advantage X7510
+  - P3470
+  - Touch Cruise
+  - Touch Dual
+  - S730
+  - P6500
+  - TyTN II
+  - S630
+  - Touch
+  - P6300
+  - Shift
+  - Advantage X7500
+  - S710
+  - P3350
+  - P3400
+  - P4350
+  - P3600i
+  - P3600
+  - P3300
+  - S620
+  - S310
+  - TyTN
+  - MTeoR
+  - One (M8i)
+  - One M8 Prime
+  - Tiara
+  - Primo
+  - Zeta
+  - Ville
+  - Ignite
+  - Desire HD2
+  - A12
+  Honor:
+  - 60 SE
+  - Watch GS 3
+  - Magic V
+  - X30
+  - Play 30 Plus
+  - 60 Pro
+  - '60'
+  - X30 Max
+  - X30i
+  - 50 Lite
+  - Play5 Youth
+  - Tablet V7
+  - Tablet V7 Pro
+  - X20
+  - Magic3 Pro+
+  - Magic3 Pro
+  - Magic3
+  - Play 5T Pro
+  - X20 SE
+  - 50 Pro
+  - '50'
+  - 50 SE
+  - Play5 5G
+  - Tablet X7
+  - Play 20
+  - Play 5T Youth
+  - Tab 7
+  - V40 Lite
+  - View40
+  - V40 5G
+  - 10X Lite
+  - 30i
+  - Watch GS Pro
+  - Watch ES
+  - Pad 6
+  - Pad X6
+  - X10 Max 5G
+  - 30 Youth
+  - 8S 2020
+  - Play4
+  - Play4 Pro
+  - X10 5G
+  - V6
+  - 9A
+  - 9C
+  - 9S
+  - 9X Lite
+  - 30 Pro+
+  - 30 Pro
+  - '30'
+  - 20e
+  - Play 4T Pro
+  - Play 4T
+  - 8A 2020
+  - 8A Prime
+  - 30S
+  - Play 9A
+  - View30 Pro
+  - View30
+  - V30 Pro
+  - V30
+  - MagicWatch 2
+  - 9X
+  - 20 lite (China)
+  - Play 3e
+  - Play 3
+  - 20S
+  - 9X Pro
+  - 9X (China)
+  - 8S
+  - Pad 5 10.1
+  - Pad 5 8
+  - 20 Pro
+  - '20'
+  - 20 lite
+  - 20i
+  - 8A Pro
+  - Tab 5
+  - View 20
+  - Magic 2 3D
+  - Magic 2
+  - Play 8A
+  - 10 Lite
+  - 8C
+  - 8X
+  - 8X Max
+  - Note 10
+  - 9N (9i)
+  - Play
+  - 7S
+  - '10'
+  - 7A
+  - 7C
+  - 9 Lite
+  - View 10
+  - 7X
+  - 6C Pro
+  - '9'
+  - 6A (Pro)
+  - 8 Pro
+  - Magic
+  - V8
+  - Pad 2
+  - 6X
+  - Holly 3
+  - Note 8
+  - '8'
+  - 5A
+  - 5c
+  - Holly 2 Plus
+  - 5X
+  - 7i
+  - '7'
+  - Bee
+  - 4C
+  - 6 Plus
+  - 4X
+  - Holly
+  - 4 Play
+  - 3C Play
+  - '6'
+  - 3X Pro
+  - 3C 4G
+  - 3X G750
+  - 3C
+  - Magic4 Pro
+  - Magic4
+  - '3'
+  - '2'
+  - U8860
+  - View
+  Huawei:
+  - P50 Pocket
+  - nova 8 SE 4G
+  - nova Y60
+  - Enjoy 20e
+  - Watch GT Runner
+  - Watch Fit mini
+  - Watch GT 3
+  - nova 9 Pro
+  - nova 9
+  - nova 8
+  - P50 Pro
+  - P50
+  - nova 8 SE Youth
+  - nova 8i
+  - Mate 40 Pro 4G
+  - Mate 40E 4G
+  - Mate X2 4G
+  - MatePad Pro 12.6 (2021)
+  - MatePad Pro 10.8 (2021)
+  - MatePad 11 (2021)
+  - Watch 3 Pro
+  - Watch 3
+  - nova 8 Pro 4G
+  - Watch Fit Elegant
+  - Mate 40E
+  - P40 4G
+  - Mate X2
+  - nova 8 Pro 5G
+  - nova 8 5G
+  - Enjoy 20 SE
+  - nova 8 SE
+  - Mate 40 RS Porsche Design
+  - Mate 40 Pro+
+  - Mate 40 Pro
+  - Mate 40
+  - Watch GT 2 Porsche Design
+  - Mate 30E Pro 5G
+  - nova 7 SE 5G Youth
+  - Y7a
+  - P smart 2021
+  - MatePad 5G
+  - Watch GT 2 Pro
+  - Y9a
+  - Enjoy 20 Plus 5G
+  - Enjoy 20 5G
+  - Watch Fit
+  - MatePad 10.8
+  - MatePad T 10s
+  - Enjoy Tablet 2
+  - Children's Watch 4X
+  - Enjoy 20 Pro
+  - Enjoy Z 5G
+  - P Smart S
+  - Y8p
+  - P40 lite 5G
+  - P30 Pro New Edition
+  - MatePad T8
+  - Y8s
+  - Y6p
+  - Y5p
+  - P smart 2020
+  - nova 7 Pro 5G
+  - nova 7 5G
+  - nova 7 SE
+  - MatePad 10.4
+  - Watch GT 2e
+  - Enjoy 10e
+  - P40 Pro+
+  - P40 Pro
+  - P40
+  - P40 lite E
+  - P40 lite
+  - MatePad Pro 10.8 5G (2019)
+  - Mate Xs
+  - P30 lite New Edition
+  - Y7p
+  - nova 7i
+  - Y6s (2019)
+  - P smart Pro 2019
+  - nova 6 5G
+  - nova 6
+  - nova 6 SE
+  - MatePad Pro 10.8 (2019)
+  - Mate X
+  - Y9s
+  - nova 5z
+  - Enjoy 10s
+  - Enjoy 10
+  - Mate 30 RS Porsche Design
+  - Mate 30 Pro 5G
+  - Mate 30 Pro
+  - Mate 30 5G
+  - Mate 30
+  - Watch GT 2
+  - nova 5i Pro
+  - Enjoy 10 Plus
+  - nova 5T
+  - MediaPad M6 10.8
+  - MediaPad M6 Turbo 8.4
+  - MediaPad M6 8.4
+  - nova 5 Pro
+  - nova 5
+  - nova 5i
+  - Y9 Prime (2019)
+  - P20 lite (2019)
+  - P Smart Z
+  - Mate 20 X (5G)
+  - P30 Pro
+  - P30
+  - P30 lite
+  - nova 4e
+  - Y5 (2019)
+  - Enjoy 9e
+  - Enjoy 9s
+  - Y Max
+  - MediaPad M5 Lite 8
+  - Y6 Pro (2019)
+  - Y6 (2019)
+  - Y7 (2019)
+  - Y7 Prime (2019)
+  - Y7 Pro (2019)
+  - Y5 lite (2018)
+  - nova 4
+  - P smart 2019
+  - Enjoy 9
+  - Watch Magic
+  - Watch GT
+  - Mate 20 RS Porsche Design
+  - Mate 20 X
+  - Mate 20 Pro
+  - Mate 20
+  - MediaPad T5
+  - MediaPad M5 lite
+  - Y9 (2019)
+  - Mate 20 lite
+  - P Smart+ 2019
+  - nova 3i
+  - nova 3
+  - Watch 2 2018
+  - Y5 Prime (2018)
+  - Y3 (2018)
+  - Y6 Prime (2018)
+  - Y6 (2018)
+  - Mate RS Porsche Design
+  - P20 Pro
+  - P20
+  - P20 lite
+  - Y7 Pro (2018)
+  - Y7 Prime (2018)
+  - Y7 (2018)
+  - Y9 (2018)
+  - MediaPad M5 10 (Pro)
+  - MediaPad M5 10
+  - MediaPad M5 8
+  - P smart
+  - nova 2s
+  - Mate 10 Porsche Design
+  - Mate 10 Pro
+  - Mate 10
+  - Watch 2 Pro
+  - Mate 10 Lite
+  - P9 lite mini
+  - Y7 Prime
+  - MediaPad M3 Lite 8
+  - MediaPad T3 10
+  - MediaPad M3 Lite 10
+  - nova 2 plus
+  - nova 2
+  - Y6II Compact
+  - MediaPad T3 8.0
+  - MediaPad T3 7.0
+  - Y7
+  - Y6 (2017)
+  - Y5 (2017)
+  - Y3 (2017)
+  - Watch 2 Classic
+  - Watch 2
+  - P10 Plus
+  - P10
+  - P10 Lite
+  - P8 Lite (2017)
+  - Enjoy 6s
+  - Mate 9 Pro
+  - Mate 9 Porsche Design
+  - Mate 9
+  - Fit
+  - Enjoy 6
+  - MediaPad M3 8.4
+  - nova plus
+  - nova
+  - MediaPad T2 10.0 Pro
+  - MediaPad T2 7.0 Pro
+  - MediaPad T2 7.0
+  - G9 Plus
+  - MediaPad T1 7.0 Plus
+  - MediaPad M2 7.0
+  - Y3II
+  - Y5II
+  - P9 lite
+  - P9 Plus
+  - P9
+  - MediaPad M2 10.0
+  - Watch
+  - Enjoy 5s
+  - Mate 8
+  - G7 Plus
+  - Y6 Pro
+  - Nexus 6P
+  - Mate S
+  - Y6
+  - G8
+  - MediaPad M2 8.0
+  - Y560
+  - Y625
+  - P8lite ALE-L04
+  - P8lite
+  - P8max
+  - P8
+  - SnapTo
+  - MediaPad X2
+  - Y635
+  - Y360
+  - Ascend Y540
+  - Ascend G628
+  - Ascend Y520
+  - Ascend Y221
+  - Ascend GX1
+  - Ascend Mate7 Monarch
+  - MediaPad T1 10
+  - MediaPad T1 8.0
+  - MediaPad T1 7.0
+  - Ascend G620s
+  - Ascend Y550
+  - Ascend G7
+  - Ascend P7 Sapphire Edition
+  - Ascend Mate7
+  - Ascend G535
+  - Y300II
+  - Ascend G630
+  - Ascend Y330
+  - Ascend Plus
+  - Ascend P7
+  - Ascend P7 mini
+  - Ascend G730
+  - Ascend Y600
+  - MediaPad 10 Link+
+  - Ascend G6 4G
+  - Ascend G6
+  - MediaPad M1
+  - MediaPad X1
+  - Ascend Y530
+  - MediaPad 7 Youth2
+  - Ascend P6 S
+  - Ascend Mate2 4G
+  - Ascend Y320
+  - Ascend Y220
+  - Ascend G740
+  - Ascend Y511
+  - Ascend W2
+  - G6153
+  - G3621L
+  - Ascend G700
+  - G610s
+  - U8687 Cronos
+  - Ascend G525
+  - MediaPad 7 Youth
+  - MediaPad 7 Vogue
+  - Ascend P6
+  - Ascend Y300
+  - Premia 4G M931
+  - Ascend Y210D
+  - Ascend P2
+  - Ascend G615
+  - Ascend G526
+  - Ascend G350
+  - Ascend G312
+  - Ascend W1
+  - Ascend Mate
+  - Ascend D2
+  - Ascend G510
