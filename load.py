@@ -1,78 +1,59 @@
-# from _typeshed import StrPath
-import asyncio
-from collections.abc import AsyncGenerator
-import os
-# 03:15
 import yaml
+import requests
+import lxml.html
+
 from pathlib import Path
 from typing import Iterator, Optional
-
-import lxml.html
-import aiohttp
 from lxml.objectify import ObjectifiedElement
-from proxy import Proxies
-from user_agents import UserAgents
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 BASE_URL = 'https://www.gsmarena.com/'
 API_KEY = 'ae82dbbc6c188a3970a86d560a753c01'
+
+THREAD_NUM = 4
 MAX_RETRIES = 3
 
-class TooManyRequests(aiohttp.ClientResponseError):
-    "Client response to too many requests"
+class TooManyRequests(requests.exceptions.RequestException): pass
 
-async def get_tree(session: aiohttp.ClientSession, url: str) -> Optional[ObjectifiedElement]:
-    timeout = aiohttp.ClientTimeout(6git0)
-    params = {'api_key': API_KEY, 'url': url}
-
+def get_tree(url: str) -> Optional[ObjectifiedElement]:
+    # Retry until request was sucessful
+    
     for _ in range(MAX_RETRIES):
-
         try:
-            async with session.get('http://api.scraperapi.com/', ssl=False, params=params, timeout=timeout) as response:
+            params = {'api_key': API_KEY, 'url': url}
+            response = requests.get(
+                'http://api.scraperapi.com',
+                params=params,
+                verify=False
+            )
+            if response.status_code == 200:
+                return lxml.html.fromstring(response.text)
+            elif response.status_code in [404, 410]:
+                return None
+            elif response.status_code == 500:
+                print("Timeout error, trying again")
+            elif response.status_code == 429:
+                print("Too many requests, trying again")
 
-                if response.status == 429:
-                    raise TooManyRequests(
-                        response.request_info,
-                        response.history,
-                        status=response.status,
-                        message=response.reason,
-                        headers=response.headers,
-                    )
-                    
-                response.raise_for_status()
-
-                content = await response.text()
-
-            return lxml.html.fromstring(content)
-
-        except aiohttp.ClientSSLError:
-            print("SSL error, choosing a new proxy")
-        except asyncio.exceptions.TimeoutError:
-            print("Timeout error, choosing a new proxy")
-        except TooManyRequests:
-            print("Too many requests, choosing a new proxy")
-        except aiohttp.ClientConnectionError:
-            print("Unknown connection error, choosing a new proxy")
-        except aiohttp.ClientResponseError:
-            print("Unknown response error, trying again")
-        except aiohttp.ClientError:
-            print("Unknown error, trying again")
+        except requests.exceptions.ConnectionError:
+            print("Connection to the API failed, trying again")
 
 
 def get_phone_brands(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
     brand_names = {
-        'Apple',
-        'BlackBerry',
-        'Google',
-        'Honor',
-        'HTC',
-        'Huawei',
-        'LG',
-        'Nokia',
-        'Meizu',
-        'OnePlus',
-        'Oppo',
-        'Realme',
+        # 'Apple',
+        # 'BlackBerry',
+        # 'Google',
+        # 'Honor',
+        # 'HTC',
+        # 'Huawei',
+        # 'LG',
+        # 'Nokia',
+        # 'Meizu',
+        # 'OnePlus',
+        # 'Oppo',
+        # 'Realme',
         'Samsung',
         'Sony',
         'Xiaomi',
@@ -90,15 +71,15 @@ def get_phone_brands(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
         yield brand_name, brand_url
 
 
-async def get_brand_models(session, tree: ObjectifiedElement) -> AsyncGenerator[tuple[str, str], None]:
+def get_brand_models(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
 
-    async def get_pages(session, tree: ObjectifiedElement) -> AsyncGenerator[Optional[ObjectifiedElement], None]:
+    def get_pages(tree: ObjectifiedElement) -> Iterator[Optional[ObjectifiedElement]]:
         tree.make_links_absolute(BASE_URL)
         page_urls = tree.xpath('//div[@class="nav-pages"]/a/@href')
 
         yield tree
         for url in page_urls:
-            page = await get_tree(session, url)
+            page = get_tree(url)
             yield page
 
     def get_models_frompage(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
@@ -112,7 +93,7 @@ async def get_brand_models(session, tree: ObjectifiedElement) -> AsyncGenerator[
 
         return zip(phone_names, phone_urls)
 
-    async for page_tree in get_pages(session, tree):
+    for page_tree in get_pages(tree):
         if page_tree is None:
             print("Skipping brand page")
             continue
@@ -150,11 +131,11 @@ def set_scraped_data(scraped_data: dict[str, dict[str, list[str]]]):
         yaml.dump(scraped_data, stream)
 
 
-async def main():
-    async with aiohttp.ClientSession() as session:
+def main():
+    with ThreadPoolExecutor(THREAD_NUM) as pool:
         scraped_models = get_scraped_data()
 
-        main_tree = await get_tree(session, 'https://www.gsmarena.com/makers.php3')
+        main_tree = get_tree('https://www.gsmarena.com/makers.php3')
         assert main_tree is not None
 
         for brand_name, brand_url in get_phone_brands(main_tree):
@@ -162,19 +143,27 @@ async def main():
             if brand_name not in scraped_models['brands']:
                 scraped_models['brands'][brand_name] = []
 
-            brand_tree = await get_tree(session, brand_url)
+            brand_tree = get_tree(brand_url)
             if brand_tree is None:
                 print(f"Skipping {brand_name} brand")
                 continue
             else:
                 print(f"Extracted {brand_name} brand")
 
-            async for model_name, model_url in get_brand_models(session, brand_tree):
+            futures = {}
+            for model_name, model_url in get_brand_models(brand_tree):
 
                 if model_name in scraped_models['brands'][brand_name]:
                     continue
 
-                model_tree = await get_tree(session, model_url)
+                future = pool.submit(get_tree, model_url)
+                futures[future] = (model_name, model_url)
+
+            for future in as_completed(futures):
+
+                model_tree = future.result()
+                model_name, model_url = futures[future]
+
                 if model_tree is None:
                     print(f"Skipping {model_name} model")
                     continue
@@ -188,4 +177,4 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    main()
