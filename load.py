@@ -1,16 +1,25 @@
+from datetime import datetime
 import yaml
+import threading
 import requests
 import lxml.html
 
 from pathlib import Path
+from dotenv import dotenv_values
 from typing import Iterator, Optional
 from lxml.objectify import ObjectifiedElement
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-
+lock = threading.Lock()
+config = dotenv_values(".env")
 BASE_URL = 'https://www.gsmarena.com/'
-API_KEY = 'ae82dbbc6c188a3970a86d560a753c01'
 
+log_file = open(f'./output-{datetime.now()}.txt', 'w')
+def printf(*args, **kwargs):
+    with lock:
+        print(*args, **kwargs, file=log_file, flush=True)
+
+BATCH_SIZE = 10
 THREAD_NUM = 4
 MAX_RETRIES = 3
 
@@ -21,7 +30,7 @@ def get_tree(url: str) -> Optional[ObjectifiedElement]:
     
     for _ in range(MAX_RETRIES):
         try:
-            params = {'api_key': API_KEY, 'url': url}
+            params = {'api_key': config["API_KEY"], 'url': url}
             response = requests.get(
                 'http://api.scraperapi.com',
                 params=params,
@@ -32,28 +41,28 @@ def get_tree(url: str) -> Optional[ObjectifiedElement]:
             elif response.status_code in [404, 410]:
                 return None
             elif response.status_code == 500:
-                print("Timeout error, trying again")
+                printf("Timeout error, trying again")
             elif response.status_code == 429:
-                print("Too many requests, trying again")
+                printf("Too many requests, trying again")
 
         except requests.exceptions.ConnectionError:
-            print("Connection to the API failed, trying again")
+            printf("Connection to the API failed, trying again")
 
 
 def get_phone_brands(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
     brand_names = {
-        # 'Apple',
-        # 'BlackBerry',
-        # 'Google',
-        # 'Honor',
-        # 'HTC',
-        # 'Huawei',
-        # 'LG',
-        # 'Nokia',
-        # 'Meizu',
-        # 'OnePlus',
-        # 'Oppo',
-        # 'Realme',
+        'Apple',
+        'BlackBerry',
+        'Google',
+        'Honor',
+        'HTC',
+        'Huawei',
+        'LG',
+        'Nokia',
+        'Meizu',
+        'OnePlus',
+        'Oppo',
+        'Realme',
         'Samsung',
         'Sony',
         'Xiaomi',
@@ -95,7 +104,7 @@ def get_brand_models(tree: ObjectifiedElement) -> Iterator[tuple[str, str]]:
 
     for page_tree in get_pages(tree):
         if page_tree is None:
-            print("Skipping brand page")
+            printf("Skipping brand page")
             continue
 
         for model in get_models_frompage(page_tree):
@@ -109,6 +118,8 @@ def fix_path(path: str) -> Path:
 def serialize(brand_name: str, model_name: str, model_tree: ObjectifiedElement) -> None:
 
     Path(f'./data/models/html/{brand_name}').mkdir(exist_ok=True)
+
+    model_name = model_name.replace('/', '|')
     filepath = fix_path(f'./data/models/html/{brand_name}/{model_name}.html')
 
     with open(filepath, 'wb') as file:
@@ -145,10 +156,10 @@ def main():
 
             brand_tree = get_tree(brand_url)
             if brand_tree is None:
-                print(f"Skipping {brand_name} brand")
+                printf(f"Skipping {brand_name} brand")
                 continue
             else:
-                print(f"Extracted {brand_name} brand")
+                printf(f"Extracted {brand_name} brand")
 
             futures = {}
             for model_name, model_url in get_brand_models(brand_tree):
@@ -158,22 +169,26 @@ def main():
 
                 future = pool.submit(get_tree, model_url)
                 futures[future] = (model_name, model_url)
-
-            for future in as_completed(futures):
-
-                model_tree = future.result()
-                model_name, model_url = futures[future]
-
-                if model_tree is None:
-                    print(f"Skipping {model_name} model")
+                if len(futures) < BATCH_SIZE:
                     continue
-                else:
-                    print(f"Extracted {model_name} model")
-                
-                serialize(brand_name, model_name, model_tree)
 
-                scraped_models['brands'][brand_name].append(model_name)
-                set_scraped_data(scraped_models)
+                for future in as_completed(futures):
+
+                    model_tree = future.result()
+                    model_name, model_url = futures[future]
+
+                    if model_tree is None:
+                        printf(f"Skipping {model_name} model")
+                        continue
+                    else:
+                        printf(f"Extracted {model_name} model")
+                    
+                    serialize(brand_name, model_name, model_tree)
+
+                    scraped_models['brands'][brand_name].append(model_name)
+                    set_scraped_data(scraped_models)
+
+                futures.clear()
 
 
 if __name__ == '__main__':
