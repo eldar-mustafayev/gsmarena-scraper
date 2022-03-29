@@ -37,7 +37,7 @@ def get_model_params(model_name: str, tree: ObjectifiedElement) -> dict[str, str
     def get_sub_data_spec(name: str) -> str:
         sub_value = tree.xpath(f'//*[@data-spec="{name}"]/../span[2]/text()')
         if len(sub_value) != 1:
-            print(f"Incorrect number of elements in {name} data spec, {model_name}")
+            print(f"Incorrect number of elements in {name} sub-data spec, {model_name}")
             return "MISSING"
         return sub_value[0]
 
@@ -93,7 +93,7 @@ def get_model_params(model_name: str, tree: ObjectifiedElement) -> dict[str, str
         return storages, rams
 
     def get_image() -> str:
-        value = tree.xpath('//*[@class="specs-photo-main"]/a/img/@src')
+        value = tree.xpath('//*[@class="specs-photo-main"]//img/@src')
         if len(value) != 1:
             print(f"Incorrect number of images, {model_name}")
             return "MISSING"
